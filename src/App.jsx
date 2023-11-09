@@ -3,14 +3,15 @@ import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
 import TabButton from "./components/TabButton.jsx";
 import mario from "./assets/mario.png";
-import luigi from "./assets/luigi.png"
+import luigi from "./assets/luigi.png";
+
+import { useState } from "react"; 
 
 function App() {
-  let footerImg = mario;
+  const [footerImg, setFooterImg] = useState(mario);
 
   function changeFooterImg(currentFooterImage) {
-    footerImg == mario ? footerImg = luigi : footerImg = mario;
-    alert(currentFooterImage);
+    footerImg == mario ? setFooterImg(luigi) : setFooterImg(mario);
   }
 
   return (
