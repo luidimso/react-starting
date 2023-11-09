@@ -8,7 +8,7 @@ import luigi from "./assets/luigi.png";
 import { useState } from "react"; 
 
 function App() {
-  const [footerImg, setFooterImg] = useState(mario);
+  const [footerImg, setFooterImg] = useState();
 
   function changeFooterImg(currentFooterImage) {
     footerImg == mario ? setFooterImg(luigi) : setFooterImg(mario);
@@ -32,7 +32,7 @@ function App() {
             <TabButton onClick={() => changeFooterImg(footerImg)}>Button Example: change image bellow</TabButton>
           </menu>
 
-          <img src={footerImg} height={300}/>
+          {footerImg && <img src={footerImg} height={300}/>}
           <p>{footerImg}</p>
         </section>
       </main>
