@@ -8,8 +8,9 @@ import luigi from "./assets/luigi.png"
 function App() {
   let footerImg = mario;
 
-  function changeFooterImg() {
+  function changeFooterImg(currentFooterImage) {
     footerImg == mario ? footerImg = luigi : footerImg = mario;
+    alert(currentFooterImage);
   }
 
   return (
@@ -27,7 +28,7 @@ function App() {
 
         <section id="examples">
           <menu>
-            <TabButton onClick={changeFooterImg}>Button Example: change image bellow</TabButton>
+            <TabButton onClick={() => changeFooterImg(footerImg)}>Button Example: change image bellow</TabButton>
           </menu>
 
           <img src={footerImg} height={300}/>
