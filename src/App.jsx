@@ -5,7 +5,7 @@ import TabButton from "./components/TabButton.jsx";
 import mario from "./assets/mario.png";
 import luigi from "./assets/luigi.png";
 
-import { useState } from "react"; 
+import { useState, Fragment } from "react"; 
 
 function App() {
   const [footerImg, setFooterImg] = useState();
@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <Header></Header>
       <main>
         <section id="core-concepts">
@@ -35,7 +35,7 @@ function App() {
           <p>{footerImg}</p>
         </section>
       </main>
-    </div>
+    </Fragment>
   );
 }
 
