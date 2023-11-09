@@ -1,39 +1,19 @@
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header.jsx";
-import CoreConcept from "./components/CoreConcepts.jsx";
-import TabButton from "./components/TabButton.jsx";
-import mario from "./assets/mario.png";
-import luigi from "./assets/luigi.png";
+import CoreConceptsList from "./components/CoreConceptsList.jsx";
+import Examples from "./components/Examples.jsx";
 
-import { useState, Fragment } from "react"; 
+import { Fragment } from "react"; 
 
 function App() {
-  const [footerImg, setFooterImg] = useState();
-
-  function changeFooterImg(currentFooterImage) {
-    footerImg == mario ? setFooterImg(luigi) : setFooterImg(mario);
-  }
-
   return (
     <Fragment>
       <Header></Header>
       <main>
-        <section id="core-concepts">
-          <h2>Core concepts</h2>
-          <ul>
-            {CORE_CONCEPTS.map((component) => <CoreConcept {...component}></CoreConcept>)}
-          </ul>
-        </section>
+        <CoreConceptsList concepts={CORE_CONCEPTS}></CoreConceptsList>
+
         <h2>Time to get started!</h2>
-
-        <section id="examples">
-          <menu>
-            <TabButton onClick={() => changeFooterImg(footerImg)} isSelected={footerImg?.includes("luigi")}>Button Example: change image bellow</TabButton>
-          </menu>
-
-          {footerImg && <img src={footerImg} height={300}/>}
-          <p>{footerImg}</p>
-        </section>
+        <Examples></Examples>
       </main>
     </Fragment>
   );
