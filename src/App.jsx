@@ -29,7 +29,7 @@ function App() {
 
         <section id="examples">
           <menu>
-            <TabButton onClick={() => changeFooterImg(footerImg)}>Button Example: change image bellow</TabButton>
+            <TabButton onClick={() => changeFooterImg(footerImg)} isSelected={footerImg?.includes("luigi")}>Button Example: change image bellow</TabButton>
           </menu>
 
           {footerImg && <img src={footerImg} height={300}/>}
