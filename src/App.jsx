@@ -11,9 +11,7 @@ function App() {
       <Header></Header>
       <main>
         <CoreConceptsList concepts={CORE_CONCEPTS}></CoreConceptsList>
-
-        <h2>Time to get started!</h2>
-        <Examples></Examples>
+        <Examples id="example"></Examples>
       </main>
     </Fragment>
   );

@@ -6,7 +6,7 @@ import luigi from "../assets/luigi.png";
 
 import { useState } from "react";
 
-export default function Examples() {
+export default function Examples({...props}) {
     const [footerImg, setFooterImg] = useState();
 
     function changeFooterImg(currentFooterImage) {
@@ -15,12 +15,13 @@ export default function Examples() {
 
     return (
         <section id="examples">
-          <menu>
-            <TabButton onClick={() => changeFooterImg(footerImg)} isSelected={footerImg?.includes("luigi")}>Button Example: change image bellow</TabButton>
-          </menu>
+            <h2>Time to get started!</h2>
+            <menu>
+                <TabButton onClick={() => changeFooterImg(footerImg)} isSelected={footerImg?.includes("luigi")}>Button Example: change image bellow</TabButton>
+            </menu>
 
-          {footerImg && <img src={footerImg} height={300}/>}
-          <p>{footerImg}</p>
+            {footerImg && <img src={footerImg} height={300}/>}
+            <p>{footerImg}</p>
         </section>
     );
 }
