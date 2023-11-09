@@ -2,8 +2,16 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcepts.jsx";
 import TabButton from "./components/TabButton.jsx";
+import mario from "./assets/mario.png";
+import luigi from "./assets/luigi.png"
 
 function App() {
+  let footerImg = mario;
+
+  function changeFooterImg() {
+    footerImg == mario ? footerImg = luigi : footerImg = mario;
+  }
+
   return (
     <div>
       <Header></Header>
@@ -19,8 +27,11 @@ function App() {
 
         <section id="examples">
           <menu>
-            <TabButton>Button Example</TabButton>
+            <TabButton onClick={changeFooterImg}>Button Example: change image bellow</TabButton>
           </menu>
+
+          <img src={footerImg} height={300}/>
+          <p>{footerImg}</p>
         </section>
       </main>
     </div>

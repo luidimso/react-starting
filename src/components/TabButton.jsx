@@ -1,6 +1,7 @@
 export default function TabButton(props) {
     function handleClick() {
-        alert("Hello");
+        alert("Image path changed")
+        props.onClick();
     }
 
     return (
