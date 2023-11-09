@@ -1,5 +1,7 @@
 import img from "./assets/react-core-concepts.png";
 
+  import { CORE_CONCEPTS } from "./data.js";
+
 const d = new Date();
 
 function Header() {
@@ -31,8 +33,10 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core concepts</h2>
-          <CoreConcept title="Test 1" description="Test 1: text"></CoreConcept>
-          <CoreConcept title="Test 2" description="Test 2: text"></CoreConcept>
+          <ul>
+            <CoreConcept title={CORE_CONCEPTS[0].title} description={CORE_CONCEPTS[0].description}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[1]}></CoreConcept>
+          </ul>
         </section>
         <h2>Time to get started!</h2>
       </main>
